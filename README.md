@@ -110,9 +110,7 @@ Example:
 
 ## 🌐 Live Demo
 
-After enabling GitHub Pages, add your deployment link here:
-
-https://yourusername.github.io/greenrise-travel-webpage/
+After enabling GitHub Pages, add your deployment link here: https://roshan-ui194.github.io/GreenRise-nature-webpage/
 
 ---
 
