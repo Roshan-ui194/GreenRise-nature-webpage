@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GreenRise Hero</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+        <!-- Google Icons -->
+         <link rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .hero {
+            position: relative;
+            padding: 20px 30px;
+
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.55),
+                    rgba(0, 0, 0, 0.45)),
+                url("../New folder/Copilot_20260527_183658.png");
+
+            border-bottom-left-radius: 50% 10%;
+            border-bottom-right-radius: 50% 10%;
+
+            overflow: hidden;
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            color: chartreuse;
+            font-family: "Libre Franklin", sans-serif;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            color: white;
+        }
+
+        li {
+            font-size: 15px;
+            font-weight: 600;
+            font-family: "Bricolage Grotesque", sans-serif;
+            list-style: none;
+        }
+
+        button {
+            color: white;
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 40px;
+            background: transparent;
+        }
+
+        button:hover {
+            background: #299b29;
+            cursor: pointer;
+            color: white;
+            font-weight: 600;
+        }
+
+        li:hover {
+            cursor: pointer;
+            color: chartreuse;
+        }
+
+        h2 {
+            color: white;
+            font-size: 60px;
+            margin-top: 14%;
+            margin-left: 10%;
+            font-family: "Poppins", sans-serif;
+            line-height: 1.2;
+        }
+
+        p {
+            color: white;
+            font-family: "Poppins", sans-serif;
+            font-size: 20px;
+            margin-left: 10%;
+            margin-top: 10px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            border-radius: 70px;
+            color: whitesmoke;
+            font-weight: 700;
+            padding: 20px 40px;
+            margin-left: 10%;
+            margin-top: 14px;
+            font-size: 15px;
+        }
+
+        .btn:hover {
+            color: black;
+        }
+
+        /* ===================== */
+        /* GREEN FALLING LEAVES  */
+        /* ===================== */
+
+        .leaves {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        /* leaf style */
+        .leaf {
+            position: absolute;
+            top: -120px;
+
+            width: 35px;
+            height: 35px;
+
+            background: linear-gradient(145deg,
+                    #4caf50,
+                    #1b5e20);
+
+            border-radius: 0 100% 0 100%;
+
+            opacity: 0.85;
+
+            transform: rotate(45deg);
+
+            box-shadow:
+                inset 2px 2px 5px rgba(255, 255, 255, 0.3),
+                0 4px 10px rgba(0, 0, 0, 0.2);
+
+            animation:
+                fall linear infinite,
+                sway ease-in-out infinite;
+        }
+
+        /* stem */
+        .leaf::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 18px;
+            background: #5d4037;
+            left: 50%;
+            top: 28px;
+            transform: translateX(-50%) rotate(-45deg);
+        }
+
+        /* fall animation */
+        @keyframes fall {
+            0% {
+                transform: translateY(-120px) translateX(0) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(120vh) translateX(120px) rotate(360deg);
+            }
+        }
+
+        /* sway animation */
+        @keyframes sway {
+
+            0%,
+            100% {
+                margin-left: 0;
+            }
+
+            50% {
+                margin-left: 80px;
+            }
+        }
+
+        /* different leaves */
+        .leaf:nth-child(1) {
+            left: 5%;
+            animation-duration: 8s, 4s;
+        }
+
+        .leaf:nth-child(2) {
+            left: 15%;
+            width: 25px;
+            height: 25px;
+            animation-duration: 10s, 5s;
+            animation-delay: 2s;
+        }
+
+        .leaf:nth-child(3) {
+            left: 28%;
+            width: 40px;
+            height: 40px;
+            animation-duration: 7s, 3s;
+            animation-delay: 1s;
+        }
+
+        .leaf:nth-child(4) {
+            left: 42%;
+            width: 22px;
+            height: 22px;
+            animation-duration: 12s, 6s;
+        }
+
+        .leaf:nth-child(5) {
+            left: 58%;
+            width: 38px;
+            height: 38px;
+            animation-duration: 9s, 4s;
+            animation-delay: 3s;
+        }
+
+        .leaf:nth-child(6) {
+            left: 72%;
+            width: 30px;
+            height: 30px;
+            animation-duration: 11s, 5s;
+            animation-delay: 1s;
+        }
+
+        .leaf:nth-child(7) {
+            left: 85%;
+            width: 45px;
+            height: 45px;
+            animation-duration: 13s, 6s;
+        }
+
+        .leaf:nth-child(8) {
+            left: 95%;
+            width: 28px;
+            height: 28px;
+            animation-duration: 9s, 5s;
+            animation-delay: 2s;
+        }
+
+        /* About Styling */
+        .head {
+            padding: 20px;
+            text-align: center;
+            color: #12a717;
+        }
+
+
+        .set {
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 30px;
+        }
+
+        .set img {
+            height: 450px;
+            width: 450px;
+            margin: 20px;
+            border-radius: 40px;
+        }
+
+        .txt {
+            color: #556B5D;
+            padding: 10px;
+            font-family: 'Outfit', sans-serif;
+            line-height: 2;
+            font-size: 18px;
+            margin-top: 20px;
+            max-width: 900px;
+        }
+
+        /* Destination Styling */
+        .title {
+            text-align: center;
+            color: #12a717;
+            padding: 20px;
+        }
+        .location{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    margin-top: 8px;
+    color: #262626;
+    font-size: 15px;
+}
+
+        .gax {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            text-align: center;
+        }
+
+        .card img {
+            height: 240px;
+            width: 250px;
+            border-radius: 30px;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .card img:hover {
+            transform: scale(1.05);
+        }
+
+        .card h3 {
+            margin-top: 12px;
+            color: #556B5D;
+            font-size: 18px;
+            font-family: "Poppins", sans-serif;
+        }
+        h4{
+            margin-top: 8px;
+            font-family: "Playwrite GB J", cursive;
+            color: #262626;
+        }
+        /*  */
+        .lery{
+            display:flex;
+            justify-content:center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .lery img{
+            height: 200px;
+            width: 200px;
+            margin-top: 20px;
+            border-radius: 20px;
+        }
+        .galle{
+            text-align: center;
+             color: #12a717;
+             margin: 20px;
+        }
+        .com{
+           text-align: center;
+           margin-top: 20px;
+           color: #12a717;
+        }
+        /* Contact Section */
+        .tab{
+            height: 400px;
+            width: 500px;
+            border: 1px solid black;
+            padding: 30px;
+            margin-top: 20px;
+            margin-left: 35%;
+            border-radius: 40px;
+        }
+      th{
+        display: block;
+      }
+      input{
+        width: 300px;
+        padding: 5px;
+        margin: 10px;
+      }
+    /* Contact Section */
+    /* Contact Section */
+
+.contact{
+    padding: 50px 0;
+    background-color: #f8f9f7;
+}
+
+.contact-title{
+    text-align: center;
+    color: #12a717;
+    margin-bottom: 30px;
+}
+.contact-box{
+    margin-left: 35%;
+}
+
+.tab{
+    display: flex;
+    justify-content: center;
+}
+
+table{
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+th{
+    text-align: left;
+    padding: 15px;
+    color: #262626;
+}
+
+td{
+    padding: 15px;
+}
+
+input,
+textarea{
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+}
+
+textarea{
+    resize: none;
+}
+
+.btn-row{
+    text-align: center;
+}
+
+.btn-row button{
+    background: #12a717;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-row button:hover{
+    background: #0e8612;
+}
+.foot{
+    height: 100px;
+    padding: 30px;
+    background-color: grey;
+}
+.ter{
+    text-align: center;
+    font-size: 17px;
+    color: white;
+}
+/* ========================= */
+/* RESPONSIVE DESIGN */
+/* ========================= */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* Tablet */
+@media (max-width: 992px){
+
+    h2{
+        font-size:48px;
+        margin-top:20%;
+    }
+
+    .set{
+        flex-direction:column;
+        align-items:center;
+        margin-left:0;
+    }
+
+    .set img{
+        width:80%;
+        height:auto;
+    }
+
+    .txt{
+        max-width:90%;
+        text-align:center;
+    }
+
+    .contact-box{
+        margin-left:0;
+        display:flex;
+        justify-content:center;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 768px){
+
+    .hero{
+        padding:20px;
+        border-bottom-left-radius:30% 5%;
+        border-bottom-right-radius:30% 5%;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    h2{
+        font-size:36px;
+        margin-top:30%;
+        margin-left:0;
+        text-align:center;
+    }
+
+    p{
+        margin-left:0;
+        text-align:center;
+        font-size:16px;
+        padding:0 20px;
+    }
+
+    .btn{
+        display:block;
+        margin:20px auto;
+    }
+
+    .set{
+        flex-direction:column;
+        align-items:center;
+        margin-left:0;
+    }
+
+    .set img{
+        width:90%;
+        height:auto;
+    }
+
+    .txt{
+        max-width:90%;
+        font-size:16px;
+        text-align:center;
+    }
+
+    .gax{
+        gap:25px;
+    }
+
+    .card img{
+        width:300px;
+        height:250px;
+    }
+
+    .lery{
+        gap:20px;
+    }
+
+    .lery img{
+        width:150px;
+        height:150px;
+    }
+
+    .contact-box{
+        margin-left:0;
+        display:flex;
+        justify-content:center;
+    }
+
+    table{
+        width:95%;
+    }
+
+    input,
+    textarea{
+        width:100%;
+    }
+
+}
+
+/* Small Mobile */
+@media (max-width: 480px){
+
+    h1{
+        font-size:24px;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+    p{
+        font-size:14px;
+    }
+
+    ul{
+        gap:10px;
+    }
+
+    li{
+        font-size:13px;
+    }
+
+    button{
+        padding:8px 15px;
+        font-size:13px;
+    }
+
+    .btn{
+        padding:14px 25px;
+    }
+
+    .card img{
+        width:260px;
+        height:220px;
+    }
+
+    .lery img{
+        width:120px;
+        height:120px;
+    }
+
+    .foot{
+        height:auto;
+        padding:20px;
+    }
+
+    .ter{
+        font-size:14px;
+    }
+
+}
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <nav>
+            <h1>GreenRise</h1>
+
+            <div class="links">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Destination</li>
+                    <li>Gallery</li>
+                    <li>Contact</li>
+                    <li><button>Explore Now</button></li>
+                </ul>
+            </div>
+        </nav>
+
+        <h2>EXPLORE THE <br>BEAUTY OF NATURE</h2>
+
+        <p>Discover peaceful mountains, green valleys and <br>beautiful travel destinations</p>
+
+        <button class="btn">Start Journey</button>
+
+        <!-- FALLING LEAVES -->
+        <div class="leaves">
+            <span class="leaf"></span>
+            <span class="leaf"></span>
+            <span class="leaf"></span>
+            <span class="leaf"></span>
+            <span class="leaf"></span>
+            <span class="leaf"></span>
+            <span class="leaf"></span>
+            <span class="leaf"></span>
+        </div>
+
+    </section>
+
+    <!-- About Section -->
+
+    <section class="about">
+        <h1 class="head">About Us</h1>
+        <div class="set">
+            <div class="img">
+                <img src="../New folder/About.jpg">
+            </div>
+            <div class="txt">
+                At GreenRise, we believe that travel is more than just visiting new places—it is about connecting with
+                nature and creating unforgettable memories. Our mission is to inspire people to explore the world's most
+                beautiful landscapes, from majestic mountains and peaceful forests to crystal-clear lakes and hidden
+                valleys. We are passionate about promoting sustainable and responsible travel that respects the
+                environment and local communities. Whether you seek adventure, relaxation, or a break from the busy city
+                life, GreenRise helps you discover destinations that bring peace and excitement. Our carefully selected
+                travel experiences are designed to help travelers reconnect with nature and enjoy every moment of their
+                journey. Through every trip, we aim to create meaningful experiences that leave a lasting impact. Join
+                us as we explore breathtaking destinations, embrace the beauty of the natural world, and celebrate the
+                joy of travel. At GreenRise, every journey is an opportunity to rise, explore, and grow.
+            </div>
+
+        </div>
+    </section>
+    <!-- Destination Section -->
+    <section class="dest">
+        <section class="dest">
+    <h1 class="title">Destination</h1>
+
+    <div class="gax">
+
+        <div class="card">
+            <img src="../New folder/Mountain Escape.jpg" alt="Mountain Valley">
+
+            <div class="location">
+                <span class="material-symbols-outlined">location_on</span>
+                <span>South India</span>
+            </div>
+
+            <h3>Mountain Escape</h3>
+        </div>
+
+        <div class="card">
+            <img src="../New folder/Green valley.jpg" alt="Green Valley">
+
+            <div class="location">
+                <span class="material-symbols-outlined">location_on</span>
+                <span>Shimla</span>
+            </div>
+
+            <h3>Green Valley</h3>
+        </div>
+
+        <div class="card">
+            <img src="../New folder/Copilot_20260527_183658.png" alt="Forest Camp">
+
+            <div class="location">
+                <span class="material-symbols-outlined">location_on</span>
+                <span>Andhra Pradesh</span>
+            </div>
+
+            <h3>Forest Camp</h3>
+        </div>
+
+        <div class="card">
+            <img src="../New folder/Blue lake.jpg" alt="Blue Lake">
+
+            <div class="location">
+                <span class="material-symbols-outlined">location_on</span>
+                <span>Odisha</span>
+            </div>
+
+            <h3>Blue Lake</h3>
+        </div>
+
+    </div>
+</section>
+ <!-- gallery Seection -->
+  <section class="galls">
+    <h1 class="galle">Gallery</h1>
+    <div class="lery">
+        <img src="../simages/one.jpeg">
+        <img src="../simages/two.webp">
+        <img src="../simages/three.avif">
+        <img src="../simages/four.jpg">
+        <img src="../simages/five.webp">
+        <img src="../simages/six.webp">
+        <img src="../simages/seven.jpeg">
+        <img src="../simages/eight.webp">
+        <img src="../simages/nine.jpg">
+        <img src="../simages/ten.jpg">
+    </div>
+  </section>
+    <section class="contact">
+    <h1 class="contact-title">Contact Us</h1>
+
+    <div class="contact-box">
+        <form>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>
+                        <input type="text" placeholder="Enter your name">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Email</th>
+                    <td>
+                        <input type="email" placeholder="Enter your email">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Phone</th>
+                    <td>
+                        <input type="tel" placeholder="Enter your phone number">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Message</th>
+                    <td>
+                        <textarea rows="5" placeholder="Write your message here..."></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="btn-row">
+                        <button type="submit">Send Message</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</section>
+<section class="footer">
+    <div class="foot">
+        <p class="ter">2026 GreenRise , All Rights Reserved</p>
+    </div>
+</section>
+</body>
+</html>
