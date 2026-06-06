@@ -12,9 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-        <!-- Google Icons -->
-         <link rel="stylesheet"
-href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- Google Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <style>
         * {
@@ -30,7 +30,8 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wg
             background-image:
                 linear-gradient(rgba(0, 0, 0, 0.55),
                     rgba(0, 0, 0, 0.45)),
-                url("../Images/Copilot_20260527_183658.png");
+                url("images/Copilot_20260527_183658.png");
+            /* ✅ FIXED: was ../Images/ */
 
             border-bottom-left-radius: 50% 10%;
             border-bottom-right-radius: 50% 10%;
@@ -69,6 +70,12 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wg
             font-weight: 600;
             font-family: "Bricolage Grotesque", sans-serif;
             list-style: none;
+        }
+
+        /* ✅ FIXED: Nav link styles */
+        li a {
+            color: inherit;
+            text-decoration: none;
         }
 
         button {
@@ -137,34 +144,23 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wg
             pointer-events: none;
         }
 
-        /* leaf style */
         .leaf {
             position: absolute;
             top: -120px;
-
             width: 35px;
             height: 35px;
-
-            background: linear-gradient(145deg,
-                    #4caf50,
-                    #1b5e20);
-
+            background: linear-gradient(145deg, #4caf50, #1b5e20);
             border-radius: 0 100% 0 100%;
-
             opacity: 0.85;
-
             transform: rotate(45deg);
-
             box-shadow:
                 inset 2px 2px 5px rgba(255, 255, 255, 0.3),
                 0 4px 10px rgba(0, 0, 0, 0.2);
-
             animation:
                 fall linear infinite,
                 sway ease-in-out infinite;
         }
 
-        /* stem */
         .leaf::after {
             content: "";
             position: absolute;
@@ -176,89 +172,28 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wg
             transform: translateX(-50%) rotate(-45deg);
         }
 
-        /* fall animation */
         @keyframes fall {
             0% {
                 transform: translateY(-120px) translateX(0) rotate(0deg);
             }
-
             100% {
                 transform: translateY(120vh) translateX(120px) rotate(360deg);
             }
         }
 
-        /* sway animation */
         @keyframes sway {
-
-            0%,
-            100% {
-                margin-left: 0;
-            }
-
-            50% {
-                margin-left: 80px;
-            }
+            0%, 100% { margin-left: 0; }
+            50% { margin-left: 80px; }
         }
 
-        /* different leaves */
-        .leaf:nth-child(1) {
-            left: 5%;
-            animation-duration: 8s, 4s;
-        }
-
-        .leaf:nth-child(2) {
-            left: 15%;
-            width: 25px;
-            height: 25px;
-            animation-duration: 10s, 5s;
-            animation-delay: 2s;
-        }
-
-        .leaf:nth-child(3) {
-            left: 28%;
-            width: 40px;
-            height: 40px;
-            animation-duration: 7s, 3s;
-            animation-delay: 1s;
-        }
-
-        .leaf:nth-child(4) {
-            left: 42%;
-            width: 22px;
-            height: 22px;
-            animation-duration: 12s, 6s;
-        }
-
-        .leaf:nth-child(5) {
-            left: 58%;
-            width: 38px;
-            height: 38px;
-            animation-duration: 9s, 4s;
-            animation-delay: 3s;
-        }
-
-        .leaf:nth-child(6) {
-            left: 72%;
-            width: 30px;
-            height: 30px;
-            animation-duration: 11s, 5s;
-            animation-delay: 1s;
-        }
-
-        .leaf:nth-child(7) {
-            left: 85%;
-            width: 45px;
-            height: 45px;
-            animation-duration: 13s, 6s;
-        }
-
-        .leaf:nth-child(8) {
-            left: 95%;
-            width: 28px;
-            height: 28px;
-            animation-duration: 9s, 5s;
-            animation-delay: 2s;
-        }
+        .leaf:nth-child(1) { left: 5%;  animation-duration: 8s, 4s; }
+        .leaf:nth-child(2) { left: 15%; width: 25px; height: 25px; animation-duration: 10s, 5s; animation-delay: 2s; }
+        .leaf:nth-child(3) { left: 28%; width: 40px; height: 40px; animation-duration: 7s, 3s;  animation-delay: 1s; }
+        .leaf:nth-child(4) { left: 42%; width: 22px; height: 22px; animation-duration: 12s, 6s; }
+        .leaf:nth-child(5) { left: 58%; width: 38px; height: 38px; animation-duration: 9s, 4s;  animation-delay: 3s; }
+        .leaf:nth-child(6) { left: 72%; width: 30px; height: 30px; animation-duration: 11s, 5s; animation-delay: 1s; }
+        .leaf:nth-child(7) { left: 85%; width: 45px; height: 45px; animation-duration: 13s, 6s; }
+        .leaf:nth-child(8) { left: 95%; width: 28px; height: 28px; animation-duration: 9s, 5s;  animation-delay: 2s; }
 
         /* About Styling */
         .head {
@@ -266,7 +201,6 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wg
             text-align: center;
             color: #12a717;
         }
-
 
         .set {
             display: flex;
@@ -297,15 +231,16 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wg
             color: #12a717;
             padding: 20px;
         }
-        .location{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3px;
-    margin-top: 8px;
-    color: #262626;
-    font-size: 15px;
-}
+
+        .location {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3px;
+            margin-top: 8px;
+            color: #262626;
+            font-size: 15px;
+        }
 
         .gax {
             margin-top: 15px;
@@ -337,342 +272,201 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wg
             font-size: 18px;
             font-family: "Poppins", sans-serif;
         }
-        h4{
+
+        h4 {
             margin-top: 8px;
             font-family: "Playwrite GB J", cursive;
             color: #262626;
         }
-        /*  */
-        .lery{
-            display:flex;
-            justify-content:center;
+
+        /* Gallery */
+        .lery {
+            display: flex;
+            justify-content: center;
             gap: 40px;
             flex-wrap: wrap;
         }
-        .lery img{
+
+        .lery img {
             height: 200px;
             width: 200px;
             margin-top: 20px;
             border-radius: 20px;
+            object-fit: cover; /* ✅ ADDED: prevents distortion */
         }
-        .galle{
+
+        .galle {
             text-align: center;
-             color: #12a717;
-             margin: 20px;
+            color: #12a717;
+            margin: 20px;
         }
-        .com{
-           text-align: center;
-           margin-top: 20px;
-           color: #12a717;
-        }
-        /* Contact Section */
-        .tab{
-            height: 400px;
-            width: 500px;
-            border: 1px solid black;
-            padding: 30px;
+
+        .com {
+            text-align: center;
             margin-top: 20px;
-            margin-left: 35%;
-            border-radius: 40px;
+            color: #12a717;
         }
-      th{
-        display: block;
-      }
-      input{
-        width: 300px;
-        padding: 5px;
-        margin: 10px;
-      }
-    /* Contact Section */
-    /* Contact Section */
 
-.contact{
-    padding: 50px 0;
-    background-color: #f8f9f7;
-}
+        /* Contact Section */
+        .contact {
+            padding: 50px 0;
+            background-color: #f8f9f7;
+        }
 
-.contact-title{
-    text-align: center;
-    color: #12a717;
-    margin-bottom: 30px;
-}
-.contact-box{
-    margin-left: 35%;
-}
+        .contact-title {
+            text-align: center;
+            color: #12a717;
+            margin-bottom: 30px;
+        }
 
-.tab{
-    display: flex;
-    justify-content: center;
-}
+        .contact-box {
+            display: flex;
+            justify-content: center; /* ✅ FIXED: centered properly */
+        }
 
-table{
-    background: white;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
+        table {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
 
-th{
-    text-align: left;
-    padding: 15px;
-    color: #262626;
-}
+        th {
+            text-align: left;
+            padding: 15px;
+            color: #262626;
+            display: block; /* kept as original */
+        }
 
-td{
-    padding: 15px;
-}
+        td {
+            padding: 15px;
+        }
 
-input,
-textarea{
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 15px;
-    font-family: "Poppins", sans-serif;
-}
+        input,
+        textarea {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: "Poppins", sans-serif;
+        }
 
-textarea{
-    resize: none;
-}
+        textarea {
+            resize: none;
+        }
 
-.btn-row{
-    text-align: center;
-}
+        .btn-row {
+            text-align: center;
+        }
 
-.btn-row button{
-    background: #12a717;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: 600;
-}
+        .btn-row button {
+            background: #12a717;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+        }
 
-.btn-row button:hover{
-    background: #0e8612;
-}
-.foot{
-    height: 100px;
-    padding: 30px;
-    background-color: grey;
-}
-.ter{
-    text-align: center;
-    font-size: 17px;
-    color: white;
-}
-/* ========================= */
-/* RESPONSIVE DESIGN */
-/* ========================= */
+        .btn-row button:hover {
+            background: #0e8612;
+        }
 
-html{
-    scroll-behavior:smooth;
-}
+        /* Footer */
+        .foot {
+            height: 100px;
+            padding: 30px;
+            background-color: grey;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-/* Tablet */
-@media (max-width: 992px){
+        .ter {
+            text-align: center;
+            font-size: 17px;
+            color: white;
+            margin: 0; /* ✅ FIXED: p tag had white color from hero, reset here */
+        }
 
-    h2{
-        font-size:48px;
-        margin-top:20%;
-    }
+        /* ========================= */
+        /* RESPONSIVE DESIGN         */
+        /* ========================= */
 
-    .set{
-        flex-direction:column;
-        align-items:center;
-        margin-left:0;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .set img{
-        width:80%;
-        height:auto;
-    }
+        /* Tablet */
+        @media (max-width: 992px) {
+            h2 { font-size: 48px; margin-top: 20%; }
+            .set { flex-direction: column; align-items: center; margin-left: 0; }
+            .set img { width: 80%; height: auto; }
+            .txt { max-width: 90%; text-align: center; }
+            .contact-box { margin-left: 0; display: flex; justify-content: center; }
+        }
 
-    .txt{
-        max-width:90%;
-        text-align:center;
-    }
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero { padding: 20px; border-bottom-left-radius: 30% 5%; border-bottom-right-radius: 30% 5%; }
+            nav { flex-direction: column; gap: 20px; }
+            ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            h2 { font-size: 36px; margin-top: 30%; margin-left: 0; text-align: center; }
+            p { margin-left: 0; text-align: center; font-size: 16px; padding: 0 20px; }
+            .btn { display: block; margin: 20px auto; }
+            .set { flex-direction: column; align-items: center; margin-left: 0; }
+            .set img { width: 90%; height: auto; }
+            .txt { max-width: 90%; font-size: 16px; text-align: center; }
+            .gax { gap: 25px; }
+            .card img { width: 300px; height: 250px; }
+            .lery { gap: 20px; }
+            .lery img { width: 150px; height: 150px; }
+            .contact-box { margin-left: 0; display: flex; justify-content: center; }
+            table { width: 95%; }
+            input, textarea { width: 100%; }
+        }
 
-    .contact-box{
-        margin-left:0;
-        display:flex;
-        justify-content:center;
-    }
-
-}
-
-/* Mobile */
-@media (max-width: 768px){
-
-    .hero{
-        padding:20px;
-        border-bottom-left-radius:30% 5%;
-        border-bottom-right-radius:30% 5%;
-    }
-
-    nav{
-        flex-direction:column;
-        gap:20px;
-    }
-
-    ul{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:15px;
-    }
-
-    h2{
-        font-size:36px;
-        margin-top:30%;
-        margin-left:0;
-        text-align:center;
-    }
-
-    p{
-        margin-left:0;
-        text-align:center;
-        font-size:16px;
-        padding:0 20px;
-    }
-
-    .btn{
-        display:block;
-        margin:20px auto;
-    }
-
-    .set{
-        flex-direction:column;
-        align-items:center;
-        margin-left:0;
-    }
-
-    .set img{
-        width:90%;
-        height:auto;
-    }
-
-    .txt{
-        max-width:90%;
-        font-size:16px;
-        text-align:center;
-    }
-
-    .gax{
-        gap:25px;
-    }
-
-    .card img{
-        width:300px;
-        height:250px;
-    }
-
-    .lery{
-        gap:20px;
-    }
-
-    .lery img{
-        width:150px;
-        height:150px;
-    }
-
-    .contact-box{
-        margin-left:0;
-        display:flex;
-        justify-content:center;
-    }
-
-    table{
-        width:95%;
-    }
-
-    input,
-    textarea{
-        width:100%;
-    }
-
-}
-
-/* Small Mobile */
-@media (max-width: 480px){
-
-    h1{
-        font-size:24px;
-    }
-
-    h2{
-        font-size:28px;
-    }
-
-    p{
-        font-size:14px;
-    }
-
-    ul{
-        gap:10px;
-    }
-
-    li{
-        font-size:13px;
-    }
-
-    button{
-        padding:8px 15px;
-        font-size:13px;
-    }
-
-    .btn{
-        padding:14px 25px;
-    }
-
-    .card img{
-        width:260px;
-        height:220px;
-    }
-
-    .lery img{
-        width:120px;
-        height:120px;
-    }
-
-    .foot{
-        height:auto;
-        padding:20px;
-    }
-
-    .ter{
-        font-size:14px;
-    }
-
-}
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            h1 { font-size: 24px; }
+            h2 { font-size: 28px; }
+            p { font-size: 14px; }
+            ul { gap: 10px; }
+            li { font-size: 13px; }
+            button { padding: 8px 15px; font-size: 13px; }
+            .btn { padding: 14px 25px; }
+            .card img { width: 260px; height: 220px; }
+            .lery img { width: 120px; height: 120px; }
+            .foot { height: auto; padding: 20px; }
+            .ter { font-size: 14px; }
+        }
     </style>
 </head>
 
 <body>
-    <!-- Hero Section -->
 
-    <section class="hero">
+    <!-- ===== Hero Section ===== -->
+    <section class="hero" id="home">
 
         <nav>
             <h1>GreenRise</h1>
-
             <div class="links">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Destination</li>
-                    <li>Gallery</li>
-                    <li>Contact</li>
+                    <!-- ✅ FIXED: nav links now use anchor tags for smooth scroll -->
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#destination">Destination</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
                     <li><button>Explore Now</button></li>
                 </ul>
             </div>
         </nav>
 
         <h2>EXPLORE THE <br>BEAUTY OF NATURE</h2>
-
         <p>Discover peaceful mountains, green valleys and <br>beautiful travel destinations</p>
-
         <button class="btn">Start Journey</button>
 
         <!-- FALLING LEAVES -->
@@ -689,13 +483,13 @@ html{
 
     </section>
 
-    <!-- About Section -->
-
-    <section class="about">
+    <!-- ===== About Section ===== -->
+    <section class="about" id="about">
         <h1 class="head">About Us</h1>
         <div class="set">
             <div class="img">
-                <img src="../Images/About.jpg">
+                <!-- ✅ FIXED: was ../Images/About.jpg -->
+                <img src="images/About.jpg" alt="About GreenRise">
             </div>
             <div class="txt">
                 At GreenRise, we believe that travel is more than just visiting new places—it is about connecting with
@@ -709,125 +503,117 @@ html{
                 us as we explore breathtaking destinations, embrace the beauty of the natural world, and celebrate the
                 joy of travel. At GreenRise, every journey is an opportunity to rise, explore, and grow.
             </div>
+        </div>
+    </section>
+
+    <!-- ===== Destination Section ===== -->
+    <!-- ✅ FIXED: removed duplicate <section class="dest"> wrapper -->
+    <section class="dest" id="destination">
+        <h1 class="title">Destination</h1>
+
+        <div class="gax">
+
+            <div class="card">
+                <!-- ✅ FIXED: was ../Images/Mountain Escape.jpg -->
+                <img src="images/Mountain Escape.jpg" alt="Mountain Escape">
+                <div class="location">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <span>South India</span>
+                </div>
+                <h3>Mountain Escape</h3>
+            </div>
+
+            <div class="card">
+                <!-- ✅ FIXED: was ../Images/Green valley.jpg -->
+                <img src="images/Green valley.jpg" alt="Green Valley">
+                <div class="location">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <span>Shimla</span>
+                </div>
+                <h3>Green Valley</h3>
+            </div>
+
+            <div class="card">
+                <!-- ✅ FIXED: was ../Images/Copilot_20260527_183658.png -->
+                <img src="images/Copilot_20260527_183658.png" alt="Forest Camp">
+                <div class="location">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <span>Andhra Pradesh</span>
+                </div>
+                <h3>Forest Camp</h3>
+            </div>
+
+            <div class="card">
+                <!-- ✅ FIXED: was ../Images/Blue lake.jpg -->
+                <img src="images/Blue lake.jpg" alt="Blue Lake">
+                <div class="location">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <span>Odisha</span>
+                </div>
+                <h3>Blue Lake</h3>
+            </div>
 
         </div>
     </section>
-    <!-- Destination Section -->
-    <section class="dest">
-        <section class="dest">
-    <h1 class="title">Destination</h1>
 
-    <div class="gax">
-
-        <div class="card">
-            <img src="../Images/Mountain Escape.jpg" alt="Mountain Valley">
-
-            <div class="location">
-                <span class="material-symbols-outlined">location_on</span>
-                <span>South India</span>
-            </div>
-
-            <h3>Mountain Escape</h3>
+    <!-- ===== Gallery Section ===== -->
+    <section class="galls" id="gallery">
+        <h1 class="galle">Gallery</h1>
+        <div class="lery">
+            <!-- ✅ FIXED: all paths changed from ../simages/ to simages/ + added alt text -->
+            <img src="simages/one.jpeg"   alt="Gallery image 1">
+            <img src="simages/two.webp"   alt="Gallery image 2">
+            <img src="simages/three.avif" alt="Gallery image 3">
+            <img src="simages/four.jpg"   alt="Gallery image 4">
+            <img src="simages/five.webp"  alt="Gallery image 5">
+            <img src="simages/six.webp"   alt="Gallery image 6">
+            <img src="simages/seven.jpeg" alt="Gallery image 7">
+            <img src="simages/eight.webp" alt="Gallery image 8">
+            <img src="simages/nine.jpg"   alt="Gallery image 9">
+            <img src="simages/ten.jpg"    alt="Gallery image 10">
         </div>
+    </section>
 
-        <div class="card">
-            <img src="../Images/Green valley.jpg" alt="Green Valley">
+    <!-- ===== Contact Section ===== -->
+    <section class="contact" id="contact">
+        <h1 class="contact-title">Contact Us</h1>
 
-            <div class="location">
-                <span class="material-symbols-outlined">location_on</span>
-                <span>Shimla</span>
-            </div>
-
-            <h3>Green Valley</h3>
+        <div class="contact-box">
+            <!-- ✅ FIXED: added action attribute to form -->
+            <form action="mailto:your@email.com" method="post" enctype="text/plain">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <td><input type="text" name="name" placeholder="Enter your name" required></td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td><input type="email" name="email" placeholder="Enter your email" required></td>
+                    </tr>
+                    <tr>
+                        <th>Phone</th>
+                        <td><input type="tel" name="phone" placeholder="Enter your phone number"></td>
+                    </tr>
+                    <tr>
+                        <th>Message</th>
+                        <td><textarea name="message" rows="5" placeholder="Write your message here..." required></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="btn-row">
+                            <button type="submit">Send Message</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
+    </section>
 
-        <div class="card">
-            <img src="../Images/Copilot_20260527_183658.png" alt="Forest Camp">
-
-            <div class="location">
-                <span class="material-symbols-outlined">location_on</span>
-                <span>Andhra Pradesh</span>
-            </div>
-
-            <h3>Forest Camp</h3>
+    <!-- ===== Footer ===== -->
+    <section class="footer">
+        <div class="foot">
+            <p class="ter">&copy; 2026 GreenRise. All Rights Reserved.</p>
         </div>
+    </section>
 
-        <div class="card">
-            <img src="../Images/Blue lake.jpg" alt="Blue Lake">
-
-            <div class="location">
-                <span class="material-symbols-outlined">location_on</span>
-                <span>Odisha</span>
-            </div>
-
-            <h3>Blue Lake</h3>
-        </div>
-
-    </div>
-</section>
- <!-- gallery Seection -->
-  <section class="galls">
-    <h1 class="galle">Gallery</h1>
-    <div class="lery">
-        <img src="../simages/one.jpeg">
-        <img src="../simages/two.webp">
-        <img src="../simages/three.avif">
-        <img src="../simages/four.jpg">
-        <img src="../simages/five.webp">
-        <img src="../simages/six.webp">
-        <img src="../simages/seven.jpeg">
-        <img src="../simages/eight.webp">
-        <img src="../simages/nine.jpg">
-        <img src="../simages/ten.jpg">
-    </div>
-  </section>
-    <section class="contact">
-    <h1 class="contact-title">Contact Us</h1>
-
-    <div class="contact-box">
-        <form>
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <td>
-                        <input type="text" placeholder="Enter your name">
-                    </td>
-                </tr>
-
-                <tr>
-                    <th>Email</th>
-                    <td>
-                        <input type="email" placeholder="Enter your email">
-                    </td>
-                </tr>
-
-                <tr>
-                    <th>Phone</th>
-                    <td>
-                        <input type="tel" placeholder="Enter your phone number">
-                    </td>
-                </tr>
-
-                <tr>
-                    <th>Message</th>
-                    <td>
-                        <textarea rows="5" placeholder="Write your message here..."></textarea>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td colspan="2" class="btn-row">
-                        <button type="submit">Send Message</button>
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </div>
-</section>
-<section class="footer">
-    <div class="foot">
-        <p class="ter">2026 GreenRise , All Rights Reserved</p>
-    </div>
-</section>
 </body>
 </html>
